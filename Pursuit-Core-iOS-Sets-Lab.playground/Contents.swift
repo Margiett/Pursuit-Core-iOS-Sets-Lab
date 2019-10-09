@@ -118,6 +118,18 @@ var strTwoIsPangram: Bool = false
 var strThreeIsPangram: Bool = false
 
 // Your code here
+let alphabets: Set<Character> = Set("abcdefghijklmnopqrstuvwxyz")
+
+var trimmedStr = ""
+for char in strOne.lowercased() {
+    if alphabets.contains(char) {
+        trimmedStr += String(char)
+        
+    }
+}
+strOneIsPangram = Set(trimmedStr) == alphabets
+
+
 
 //assert(strOneIsPangram == true, "Was expecting true, but got \(strOneIsPangram)")
 //assert(strTwoIsPangram == false, "Was expecting false, but got \(strTwoIsPangram)")
