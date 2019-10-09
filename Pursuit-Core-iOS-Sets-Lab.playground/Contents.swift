@@ -11,6 +11,10 @@ let numbers = [1,1,2,4,4,4,6,6,7,8]
 var numbersWithNoDuplicates = [Int]()
 
 // Your code here
+var numbers = [1,1,2,4,4,4,6,6,7,8]
+var numbersWithNoDuplicates = [Int]()
+
+numbersWithNoDuplicates = Array(Set(numbers)).sorted()
 
 //assert(numbersWithNoDuplicates == [1,2,4,6,7,8], "Was expecting [1,2,4,6,7,8], but got \(numbersWithNoDuplicates)")
 
@@ -23,6 +27,20 @@ let scores = [1, 77, 83, 32, 77, 77, 83, 32, 99]
 var scoresThatAppearOnce = [Int]()
 
 // Your code here
+var visitedScores: Set<Int> = []
+var uniqueScores: Set<Int> = []
+for score in scores {
+    if !visitedScores.contains(scores) {
+        
+        visitedScores.insert(score)
+        uniqueScores.insert(score)
+    } else {
+        uniqueScores.remove(score)
+        
+    }
+    
+}
+scoresThatAppearOnce = uniqueScores.sorted()
 
 //assert(scoresThatAppearOnce == [1, 99], "Was expecting [1, 99], but got \(scoresThatAppearOnce)")
 
@@ -51,6 +69,21 @@ let arrFive = [3,4,5,6,7]
 var arrSix: [Int] = []
 
 // Your code here
+let arrFour = [1,2,3,4,5]
+let arrFive = [3,4,5,6,7]
+
+var arrSix: [Int] = []
+
+let Set1 = Set(arrFour)
+let Set2 = Set(arrFive)
+
+
+print(Set1,Set2)
+
+let combainSets = Set1.intersection(Set2).sorted()
+
+
+print(combainSets)
 
 //assert(arrSix == [3,4,5], "Was expecting [3,4,5], but got \(arrSix)")
 
